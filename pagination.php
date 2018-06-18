@@ -1,4 +1,15 @@
 <?php 
+class Utility {
+
+	protected $DBcon;
+
+	public function __construct(){
+		require_once (dirname(__DIR__).'./dbcon.php');
+ 		$db = new dbconnect();
+    	$this->DBcon = $db->connect();
+	}
+
+}
 
 class paginate extends Utility{
 	function __construct() {
