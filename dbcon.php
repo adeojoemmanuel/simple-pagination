@@ -9,11 +9,13 @@ class dbconnect {
     }
 
     function connect() {
-        require_once(dirname(__DIR__).'/config.php');
+        require 'config.php';
         $server = DB_HOST;
         $user = DB_USERNAME;
         $db = DB_DATABASE;
         $pass = DB_PASSWORD;
+        $currency = '&#8377; '; //currency symbol
+        
         try {
             $this->conn = new PDO("mysql:host=$server;dbname=$db", $user, $pass);
             // set the PDO error mode to exception
